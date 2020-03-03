@@ -12,7 +12,35 @@ You may assume that each input would have exactly one solution, and you may not 
 >
 >return [0, 1]
 
-# 코드 
+
+# 코드 (2차시)
+
+    /**
+    * @param {number[]} nums
+    * @param {number} target
+    * @return {number[]}
+    */
+    var twoSum = function(nums, target) {
+        let map = new Map();
+        
+        for(let i = 0; i < nums.length; i++){
+            let diff = target - nums[i];
+            
+            if(map.get(diff) !== undefined){
+                return [map.get(diff), i];
+            }
+            
+            map.set(nums[i], i);
+        }
+    };
+
+Date: **2020.03.03**    
+Status: **Accepted**  
+Runtime: **52 ms(Rank: 93.68%)**  
+Memory Usage: **35 MB**
+
+
+# 코드 (1차시)
 
     /**
     * @param {number[]} nums
@@ -33,3 +61,7 @@ Date: **2020.03.02**
 Status: **Accepted**  
 Runtime: **112 ms(Rank: 38.26%)**  
 Memory Usage: **34.8 MB**
+
+
+
+
